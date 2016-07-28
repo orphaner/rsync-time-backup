@@ -280,7 +280,7 @@ while : ; do
 
     CMD="rsync"
     if [ -n "$SSH_CMD" ]; then
-        CMD="$CMD  -e 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'"
+        CMD="$CMD  -e 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null  -T -c arcfour -o Compression=no -x'"
     fi
     CMD="$CMD --compress"
     CMD="$CMD --numeric-ids"
